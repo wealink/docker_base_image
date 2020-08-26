@@ -1,0 +1,14 @@
+include:
+  - '/alpine/.ci.yml'
+  - '/alpine_glibc/.ci.yml'
+  - '/jdk/.ci.yml'
+  - '/maven/.ci.yml'
+  - '/docker/.ci.yml'
+
+variables:
+  REGISTRY_DOMAIN: "tezign.com:5000"
+
+
+
+
+

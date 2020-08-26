@@ -1,0 +1,18 @@
+image: docker:19.03.8
+stages:
+  - build
+
+maven:
+  stage: build
+  variables:
+    VERSION: "3"
+  script:
+    - cd $CI_JOB_NAME
+    - docker build -t $REGISTRY_DOMAIN/$CI_JOB_NAME:$VERSION .
+    - docker push $REGISTRY_DOMAIN/$CI_JOB_NAME:$VERSION
+  only:
+    changes:
+      - maven/*
+
+  tags:
+    - images
